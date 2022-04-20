@@ -8,7 +8,7 @@ const state = {
   mini: false,
   items: [
     {
-      title: 'Dashboard',
+      title: '資格管理',
       icon: 'mdi-view-dashboard',
       to: '/',
     },
