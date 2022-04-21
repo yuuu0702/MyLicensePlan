@@ -9,9 +9,7 @@
 
     <v-list-item-content class="pl-2">
       <v-list-item-title class="text-h3">
-        <strong class="mr-1 font-weight-black">資格</strong>
-
-        <span class="primary--text">管理</span>
+        <span class="mr-1 font-weight-black">資格管理</span>
       </v-list-item-title>
     </v-list-item-content>
   </v-list-item>
