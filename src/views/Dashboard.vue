@@ -1,21 +1,61 @@
 <template>
-  <v-data-table
-    v-model="selected"
-    :headers="headers"
-    :items="desserts"
-    :single-select="singleSelect"
-    item-key="name"
-    show-select
-    class="elevation-1"
-  >
-    <template v-slot:top>
-      <v-switch
-        v-model="singleSelect"
-        label="Single select"
-        class="pa-3"
-      />
-    </template>
-  </v-data-table>
+  <v-container>
+    <v-data-table
+      v-model="selected"
+      :headers="headers"
+      :items="license"
+      item-key="name"
+      show-select
+      class="elevation-1"
+    />
+
+    <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      <template
+        v-slot:activator="{ on, attrs }"
+      >
+        <v-row justify="end" />
+        <v-btn
+          color="green lighten-2"
+          dark
+          v-bind="attrs"
+          v-on="on"
+        >
+          登録
+        </v-btn>
+      </template>
+
+      <v-card>
+        <v-card-title class="text-h5 grey lighten-2">
+          取得する資格を確認します
+        </v-card-title>
+
+        <v-card-text>
+          <li
+            v-for="item in selected"
+            :key="item"
+          >
+            {{ item.name }}
+          </li>
+        </v-card-text>
+
+        <v-divider />
+
+        <v-card-actions>
+          <v-spacer />
+          <v-btn
+            color="primary"
+            text
+            @click="dialog = false"
+          >
+            登録
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-container>
 </template>
 
 <script>
@@ -24,6 +64,7 @@
       return {
         singleSelect: false,
         selected: [],
+        dialog: false, // ダイアログの表示用
         headers: [
           {
             text: '資格名称',
@@ -36,7 +77,7 @@
           { text: '合格率(目安)', value: 'pass_rate' },
           { text: '実施機関', value: 'agency' },
         ],
-        desserts: [
+        license: [
           {
             name: '法務2級',
             career: '銀行業務',
@@ -109,6 +150,11 @@
           },
         ],
       }
+    },
+    methods: {
+      onclick () {
+        console.log('a' + this.selected)
+      },
     },
   }
 </script>
