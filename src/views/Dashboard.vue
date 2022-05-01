@@ -84,6 +84,7 @@
             difficulty: 3,
             pass_rate: '30%',
             agency: '銀行業務検定',
+            date: ['2022-05-05T'],
           },
           {
             name: '財務2級',

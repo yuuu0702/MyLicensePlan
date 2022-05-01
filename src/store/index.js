@@ -15,6 +15,16 @@ const store = new Vuex.Store({
   ],
   state: {
   license: '資格を選択してください',
+  // カレンダー試験日
+  events: [
+    {
+      name: '会議',
+      start: '2022-05-02', // 開始時刻
+      end: '2022-05-02', // 終了時刻
+      color: 'blue',
+      timed: false, // 終日ならfalse
+    },
+  ],
   },
   mutations: {
     updateLicense (state, payload) {
