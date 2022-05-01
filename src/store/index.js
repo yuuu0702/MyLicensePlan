@@ -13,6 +13,14 @@ const store = new Vuex.Store({
   plugins: [
     pathify.plugin,
   ],
+  state: {
+  license: '資格を選択してください',
+  },
+  mutations: {
+    updateLicense (state, payload) {
+      state.license = payload.license
+},
+  },
 })
 
 store.subscribe(mutation => {

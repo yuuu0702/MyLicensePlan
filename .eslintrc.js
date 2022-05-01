@@ -14,7 +14,7 @@ module.exports = {
   },
 
   rules: {
-    'no-console': 'off',
+    'no-console': 0,
     'no-debugger': 'off',
     // https://github.com/babel/babel-eslint/issues/681#issuecomment-420663038
     'template-curly-spacing': 'off',

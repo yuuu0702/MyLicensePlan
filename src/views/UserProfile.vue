@@ -12,6 +12,14 @@
         <material-card>
           <template #title>
             取得予定の資格一覧
+            <div id="app">
+              <li
+                v-for="item in $store.state.license"
+                :key="item"
+              >
+                {{ item.name }}
+              </li>
+            </div>
           </template>
         </material-card>
       </v-col>

@@ -1,3 +1,4 @@
+
 <template>
   <v-container>
     <v-data-table
@@ -8,7 +9,6 @@
       show-select
       class="elevation-1"
     />
-
     <v-dialog
       v-model="dialog"
       width="500"
@@ -48,7 +48,7 @@
           <v-btn
             color="primary"
             text
-            @click="dialog = false"
+            @click="update()"
           >
             登録
           </v-btn>
@@ -153,7 +153,11 @@
     },
     methods: {
       onclick () {
-        console.log('a' + this.selected)
+        console.log(111)
+      },
+      update () {
+        this.dialog = false
+        this.$store.commit('updateLicense', { license: this.selected })
       },
     },
   }
