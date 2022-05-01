@@ -14,7 +14,7 @@ const store = new Vuex.Store({
     pathify.plugin,
   ],
   state: {
-  license: '資格を選択してください',
+  getlicense: '資格を選択してください',
   // カレンダー試験日
   events: [
     {
@@ -29,6 +29,10 @@ const store = new Vuex.Store({
   mutations: {
     updateLicense (state, payload) {
       state.license = payload.license
+},
+    updateLicenseDate (state, payload) {
+        state.events[payload.count].start = payload.licenseDate
+        state.events[payload.count].end = payload.licenseDate
 },
   },
 })

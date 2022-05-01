@@ -84,7 +84,7 @@
             difficulty: 3,
             pass_rate: '30%',
             agency: '銀行業務検定',
-            date: ['2022-05-05T'],
+            date: ['2022-05-05'],
           },
           {
             name: '財務2級',
@@ -92,6 +92,7 @@
             difficulty: 3,
             pass_rate: '30%',
             agency: '銀行業務検定',
+            date: ['2022-05-06'],
           },
           {
             name: '税務2級',
@@ -159,6 +160,9 @@
       update () {
         this.dialog = false
         this.$store.commit('updateLicense', { license: this.selected })
+        for (let i = 0; i < this.selected.length; i++) {
+          this.$store.commit('updateLicenseDate', { licenseDate: this.selected[i].date, count: this.i })
+        }
       },
     },
   }
